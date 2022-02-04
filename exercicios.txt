@@ -1,0 +1,66 @@
+''' Exercício 1: Criar um objeto do tipo Cliente com os dados Ana
+Maria e 25, na sequência:
+a) Imprimir na tela os dados do objeto criado;
+b) Imprimir na tela os dados do objeto criado no formato de array.
+Observações:
+• O seu programa deverá estar no módulo principal.py;
+• Será necessário importar as classes do módulo codigo.py. '''
+
+from aula.codigo import *
+
+a = Cliente('Ana Maria', 25, 1)
+print(a.toString())
+print(a.toArray())
+
+''' Exercício 2: Alterar o Exercício 1 para que seja fornecido o ID igual a
+10 na criação do objeto Cliente. '''
+
+from aula.codigo import *
+
+a = Cliente('Ana Maria', 25, 10) 
+print(a.toString())
+print(a.toArray())
+
+''' Exercício 3: Criar um objeto do tipo Cadastro e colocar nele os seguintes
+objetos do tipo Cliente:
+• Ana Maria e 25;
+• Pedro Silva e 21;
+• Amanda Soares e 28.
+Na sequência:
+• Imprimir na tela o conteúdo do cadastro;
+• Salvar o conteúdo do objeto do tipo Cadastro no arquivo
+teste.txt. Isso criará o arquivo dentro do package aula, assim
+como é mostrado ao lado. '''
+
+from aula.codigo import *
+
+a = Cliente('Ana Maria', 25, 1)
+b = Cliente('Pedro Silva', 21, 2)
+c = Cliente('Amanda Soares', 28, 3)
+
+d = Cadastro()
+d.add(a)
+d.add(b)
+d.add(c)
+d.print()
+
+''' Exercício 4: Criar um objeto do tipo Cadastro e carregar nele o conteúdo
+do arquivo teste.txt que foi criado no Exercício 3. Na sequência,
+imprimir na tela o conteúdo do objeto Cadastro. '''
+
+from aula.codigo import *
+
+a = Cliente('Ana Maria', 25, 1)
+b = Cliente('Pedro Silva', 21, 2)
+c = Cliente('Amanda Soares', 28, 3)
+
+d = Cadastro()
+d.add(a)
+d.add(b)
+d.add(c)
+
+d.salvar('teste.txt') #com o mÉtodo SALVAR colocamos o conteudo no TXT
+
+e = Cadastro() 
+e.ler('teste.txt') #com o método LER pegamos o conteudo que foi salvo no TXT
+e.print()
